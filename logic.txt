@@ -1,0 +1,83 @@
+let i = 0;
+// while (i < 2) {
+  let tickitNumber = Math.floor(Math.random() * LUCKY_NUMBERS.length);
+  console.log("TICKIT NUMBER IS =>", LUCKY_NUMBERS[tickitNumber]);
+
+  gameTicketNumberDiv.innerHTML =
+  `<h4>${LUCKY_NUMBERS[tickitNumber]}</h4>`
+
+  if (PLAYER_NUMBERS.includes(LUCKY_NUMBERS[tickitNumber])) {
+    console.log("REMOVE FROM PLAYER NUMBERS");
+    PLAYER_NUMBERS = PLAYER_NUMBERS.filter(
+      (item) => item !== LUCKY_NUMBERS[tickitNumber]
+    );
+
+    LUCKY_NUMBERS = LUCKY_NUMBERS.filter(
+      (item) => item !== LUCKY_NUMBERS[tickitNumber]
+    );
+    console.log("COMPUTER NUMBERS ARE =>", COMPUTER_NUMBERS);
+    console.log("PLAYER NUMBERS ARE =>", PLAYER_NUMBERS);
+  }
+
+  if (COMPUTER_NUMBERS.includes(LUCKY_NUMBERS[tickitNumber])) {
+    console.log("REMOVE FROM COMPUTER NUMBERS");
+    COMPUTER_NUMBERS = COMPUTER_NUMBERS.filter(
+      (item) => item !== LUCKY_NUMBERS[tickitNumber]
+    );
+    LUCKY_NUMBERS = LUCKY_NUMBERS.filter(
+      (item) => item !== LUCKY_NUMBERS[tickitNumber]
+    );
+    console.log("COMPUTER NUMBERS ARE =>", COMPUTER_NUMBERS);
+    console.log("PLAYER NUMBERS ARE =>", PLAYER_NUMBERS);
+  }
+  console.log(i, "---------------------- TIME FINISHED ----------------------");
+
+  if (PLAYER_NUMBERS.length === 0) {
+    console.log("PLAYER WON");
+    break;
+  }
+  if (COMPUTER_NUMBERS.length === 0) {
+    console.log("COMPUTER WON");
+    break;
+  }
+
+  i++;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 - Press On Button "Start Game", After That Randomly 12 Numbers Generated Between
+1-100
+
+2 - You & Computer Have 6-6 Number From Above 12
+
+3 - Press On Button "Get A New Number" then One Lucky Number will be Generated from 12 Numbers
+& if you have that number it will be taken from you or if computer has that number then it will be removed from computer automatically.
+
+4 - this is how games go
+
+5 - who loose his all number first will be winner
+

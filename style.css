@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 52.5%;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #011f3f;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.fade-out {
+  display: none !important;
+}
+
+.fade-in {
+  display: block;
+}
+
+.game__hidden--screen {
+  display: none;
+}
+
+.game__btn {
+  width: 30rem;
+  font-size: 2.2rem;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  transition: all 650ms ease;
+  text-align: center;
+}
+
+.game__btn--primary {
+  background-color: hsl(120, 100%, 25%);
+}
+
+.game__btn--primary:hover {
+  background-color: hsl(120, 100%, 15%);
+}
+
+.game__btn--secondary,
+.game__btn--restart {
+  background-color: hsl(240, 69%, 61%);
+}
+
+.game__btn--secondary:hover,
+.game__btn--restart:hover {
+  background-color: hsl(240, 69%, 51%);
+}
+
+.game__new--numberButton {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.game__new--numberButton:hover {
+  background-color: hsl(0, 100%, 30%);
+}
+
+.game__btn--restart {
+  margin-top: 5rem;
+}
+
+section {
+  position: relative;
+}
+
+.game__screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 90rem;
+}
+
+.game__title {
+  font-size: 4rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.game__buttons {
+  gap: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  margin-top: 15rem;
+}
+
+/************************ Game Modal Styling ************************/
+
+.game__modal {
+  background-color: #ccc;
+  color: #000;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 650ms ease;
+  z-index: 91;
+}
+
+.game__model--title {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.game__model--paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  text-transform: capitalize;
+}
+
+.game__modal--button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 3rem;
+  color: #000;
+  cursor: pointer;
+  position: absolute;
+  right: 2%;
+  top: 0;
+}
+
+.game__modal--hidden {
+  pointer-events: none;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.game__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.827);
+  z-index: 90;
+}
+
+/************************ Game Numbers Styling ************************/
+
+.game__numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.game__helper {
+  position: absolute;
+  bottom: -20%;
+  right: 0%;
+}
+
+.fa-question-circle {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.game__all--numbers {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+}
+
+.game__all--number,
+.game__player--number,
+.game__computer--number {
+  font-size: 2rem;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #ffffff;
+  border-radius: 100%;
+}
+
+.game__ticket--number h4 {
+  margin: 4rem 0;
+  text-align: center;
+  font-size: 6rem;
+}
+
+.game__playercomputer--numbers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  gap: 1rem;
+}
+
+.game__computer--numbers,
+.game__player--numbers {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.game__player--number {
+  background-color: hsl(51, 100%, 50%);
+  border: none;
+  color: #000;
+}
+
+.game__computer--number {
+  border: none;
+  background-color: #ff0000;
+}
+
+/************************ Game Winner Styling ************************/
+
+.game__winner--screen {
+  margin-top: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game__winner--message {
+  font-size: 4rem;
+}
+
+/************************ Game Loader ************************/
+
+.game__loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+/************************ Responsive Styling ************************/
+
+@media screen and (min-width: 50rem) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .game__modal {
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    transition: all 650ms ease;
+  }
+}
